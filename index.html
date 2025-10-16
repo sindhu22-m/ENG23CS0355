@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Games</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body >
+  <header class="header">
+    <h1>Grid Games</h1>
+    
+    <button onclick="logout()">Logout</button>
+   
+    <p>Play and have fun with our collection of simple games!</p>
+  </header>
+
+  <main class="game-container">
+    <div class="game-card" onclick="startGame('tictactoe')">
+      <img src="tictactoe.png" alt="Tic Tac Toe">
+      <h2>Tic Tac Toe</h2>
+    </div>
+    <div class="game-card" onclick="startGame('snake')">
+      <img src="snake.jpeg" alt="Snake" >
+      <h2>Snake</h2>
+    </div>
+    <div class="game-card" onclick="startGame('whackAMole')">
+      <img src="whackamole2.png" alt="Whack-a-Mole">
+      <h2>Whack-a-Mole</h2>
+    </div>
+    <div class="game-card" onclick="startGame('maze')">
+      <img src="maze.webp" alt="Maze">
+      <h2>Maze</h2>
+    </div>
+    <div class="game-card" onclick="startGame('crossRoad')">
+      <img src="crosstheroad2.avif" alt="Cross the Road">
+      <h2>Cross the Road</h2>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <p>© 2024 Mini Games | Built for fun and entertainment</p>
+  </footer>
+  <script>
+    const isLoggedIn = sessionStorage.getItem("loggedIn");
+    if (!isLoggedIn) {
+    window.location.href = "login.html";
+    }
+// Hide/Show elements based on login status
+    if (isLoggedIn) {
+      document.getElementById("signupLink").style.display = "none";
+      document.getElementById("loginLink").style.display = "none";
+    } else {
+      document.querySelector("button[onclick='logout()']").style.display = "none";
+    }
+
+  </script>
+  
+  <script src="script.js"></script>
+  <script src="tictactoe.js"></script>
+  <script src="maze.js"></script>
+  <script src="crosstheroad.js"></script>
+
+ 
+</body>
+</html>
